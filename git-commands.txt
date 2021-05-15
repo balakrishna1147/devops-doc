@@ -1,0 +1,138 @@
+
+GIT PRACTICE 
+---------------
+
+1)  how to create Branch 
+	a) git branch  -  to list out branches
+	b) git branch <branch_name>  - to create new branch
+	c) git checkout <branch_name> - to switch into branch 
+	d) git push origin <branch_name>  - to publish into remote repository
+	e) git branch -d <branch_name>  - to delete branch in local
+	f) git push origin :<branch_name> - to delete branch from remote repository 
+	g) git checkout -b <branch_name> - to create & swap into a branch. 
+2) git status - to check status of the changes
+       Note : -  Red colored changes - workspace reeleted changes
+	             green colored changes - staging releated changes
+3) git add <file_name> (or) .  - to add the list of changes/files into staging area
+4) git commit -m <"message"> - to commit your changes into local repo. 
+        Note: - when you commit the chages it will create meta data such as 
+		        commit id, author name, timestamp, commit message on top up your chagnes. 
+				that helps to track the versions of each change. 
+				
+5) git commit --amend - used to change recent commit message
+
+6) git log - used to list out version/commit history
+7) git clone <url>  - used to clone the repo into your local machine
+8) git config --global user.name <"user_name">  - to assign user name to our local git client
+9) git config --global user.email <"user_email"> - to assign user email to our local git client 
+            Note: - user name, email help to admin to track verison history with author detatils. 
+10) git push origin <branch> - to publish your local changes into remote repository. 
+11) git pull origin <branch> - to fetch the updted changes from remote repository. 
+12) git push --set-upstream origin <branch_name> - to map local branch to remote branch. 
+13) git checkout -- . (or) <file_name>  - to revert the  change from workspace. 
+14) git reset HEAD -  to revert the changes from staging and those will be available in workspace
+15) git reset --hard/soft - <commit_id> - to revert the changes from local repo 
+     Note : --hard - it will delete permentely 
+	        --soft -  it will delete from local repo but changes will back to stagin area.  
+16) git push -f origin <branch> - to reverth the changes from remote repository.
+17) git revert <commit_id> - to revert the specific commit changes. 
+
+BARE REPOSITORY 
+----------------
+The bare repository on a remote server to allow multiple contributors to push their work.
+The contents of a bare repository is same as the contents of .git folder inside your local working repository
+
+18) git init --bare --shared <repo_name.git>  - to create remote/bare repository 
+
+19) git init -  to create local repository 
+20) git remote add <alias_name> <URL> - to configure/map your local repo with remote repo
+21) git remote remove <alias_name> - to delete the configuration/maping from local repo with remote repo 
+22) git push -u <URL> <branch_name> - to configure and push local changes into remote repo first time 
+23) git remote show - it will show the which remote URL has configured in your local repo
+24) git remote -v - it will show all remote url configuration with your local repo 
+25) git pull <URL> <branch_name>  --allow-unrelated-histories - to configure unreleated history repos 
+
+
+branching stretegy
+--------------------
+	a) Development Branch
+	b) Release Branch
+	c) Hot-fix Branch 
+	d) Feature Branch 
+	
+How to merge the branches : - 
+26) git merge <source_branch>
+
+while merge we may get conflicts 
+
+a) if both dev teams working on different files - No conflicts occurs
+b) if both dev teams working on same file in different locations - No conflicts occurs
+c) if both dev teams working on same file in same line - conflicts occurs 
+
+
+How to resolve merge conflicts : -
+-------------------------------
+	a) using auto merge third party tools
+	b) manual merge by resolving conflicts manually
+	c) abort the merge. 
+
+27) git merge --abort 
+
+	
+stash 
+-------
+it used for store the changes in cached memory for temperory base
+
+28) git stash list  -   list out all stashs
+29) git stash save <ref_no> - to create/save your changes in cached memory with stash id
+30) git stash apply <stash_id> - to revert the changes from stash list, but chages are available in stash lsit also 
+31) git stash pop <stash_id>  - to revert the changes from stash list, changes will be removed from stash list 
+32) git stash drop  <stash_id> - to remove th stashe
+
+TAG 
+-----
+33) git tag - used to list out tags
+34) git tag <tag_name> - to create new tag
+35) git tag -d <tag_name> - to delete tag from local
+36) git push origin <tag_name> - to publish tags into remote repo
+37) git push origin :<tag_name> - to delete tags from remote repo 
+
+Diff 
+----------
+38) git diff - it will compare between workspace & staging
+39) git diff --cached - it will compare in between staging & repo
+40) git diff HEAD - it will compare in between workspace & repo 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
